@@ -22,12 +22,12 @@ else if ($coins >= $price){
 		$sql1 = "UPDATE web_coins SET coins = coins - $price, whitelisted = '1' WHERE steamid = $steamid";
 		$result = $conn->query($sql1);
 		$conn->close();
-		whitelistMe();
+		whitelistMe($rconpass);
 		echo "You may now join server! Your SteamID is now whitelisted. $left WAPs left";
 
 
 }
-function whitelistMe() {
+function whitelistMe($rconpass) {
 	// Edit this ->
 	define( 'SQ_SERVER_ADDR', 'weallplay.eu' );
 	define( 'SQ_SERVER_PORT', 27060 );
